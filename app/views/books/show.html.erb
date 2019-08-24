@@ -1,5 +1,5 @@
 <div class="row">
-	<%= render "users/list"%>
+	<%= render "users/list",book: @book,user: @user%>
 	<div class="col-xs-9">
 		<h2>Book detail</h2>
 		<table class="table">
@@ -12,11 +12,12 @@
 				</td>
 				<td><%= @booka.title %></td>
 				<td><%= @booka.body%></td>
-				<% if @booka.user_id == current_user.id %>
+			<% if @user== current_user%>
 				<td><%= link_to  "Edit",edit_book_path(id: @booka.id), class: "edit_book_#{@booka.id}"%></td>
 				<td><%= link_to "Destroy", book_path(@booka.id), method: :delete,"data-confirm" => "?????Are you sure??????", class: "destroy_book_#{@booka.id}" %>
 				</td>
-				<% end %>
+				<% end%>
+				
 			 </tr>
 		   </table>
 	     </div>

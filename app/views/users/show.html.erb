@@ -1,4 +1,4 @@
-
+<% if user_signed_in? %>
 
 <div class="row">
 	<div class="col-xs-3">
@@ -13,7 +13,7 @@
 					</tr>
 					<tr>
 						<th>introduction</th>
-						<th><%= @user.introduction %></th>
+						<th><%= @user.introduction  %></th>
 					</tr>
 				</tbody>
 			</table>
@@ -69,3 +69,4 @@
 	      	</table>
          	</div>
           </div>
+          <%end%>

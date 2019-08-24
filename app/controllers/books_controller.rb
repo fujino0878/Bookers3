@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  
+  before_action :authenticate_user!,only: [:create,:edit,:update,:destroy,:index,:show]
     def create
         @book = Book.new(book_params)
   	@book.user_id = current_user.id
@@ -9,19 +9,32 @@ class BooksController < ApplicationController
         else
       @user = current_user
       @books = Book.all.reverse_order
+      flash[:notice] = "error !!!!!"
       render :index
         end
     
     end
     def update
+    @user = current_user
   	@book = Book.find(params[:id])
   	@book.user_id = current_user.id
-  	if @book.update(book_params)
+  	
+  	#ログインのチェック！！！！！
+  if @book.user_id != current_user.id
+      flash[:notice] = " error! You can't access!"
+      redirect_to books_path
+  
+  end
+  
+  #アップデート！！！
+   	if @book.update(book_params)
   		flash[:notice] = "successfully edited!"
-  		redirect_to books_path
+  		redirect_to book_path(@book.id)
   	else
+  	  	flash[:notice] = "error error not successfully edited!"
   		render :edit
   	end
+  
     end
     def index
         @user = current_user
@@ -31,14 +44,17 @@ class BooksController < ApplicationController
     def edit
         @book = Book.find(params[:id])
     if @book.user_id != current_user.id
-      flash[:notice] = " You can't access!"
-      redirect_to user_path(@book.user_id)
+      flash[:notice] = " error! You can't access!"
+      redirect_to books_path
     end
     end
     def show
+   
     @booka = Book.find(params[:id])
-    @user = current_user
+    @user = User.find (@booka.user_id)
     @book= Book.new
+    
+    
     end
     
      def destroy

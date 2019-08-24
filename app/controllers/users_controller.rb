@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:top,:about]
   def index
     @user = current_user
     @users = User.all.order(created_at: :desc)
@@ -8,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]) 
     @books = @user.books.reverse_order
      @book=Book.new
+     
   end
   
   def edit
@@ -20,9 +22,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "successfully update user!"
+      flash[:notice] = "updated_inttroduction successfully !"
       redirect_to user_path(@user.id)
     else
+       flash[:notice] = "error......unsuccessfully updated user!sorryyyy!!!!"
       render :edit
     end
   end
