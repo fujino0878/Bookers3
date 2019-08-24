@@ -7,12 +7,12 @@
     	<%end%>
 		<%= form_for(@user) do |f|%>
 		<label>Name</label><br>
-		<%= f.text_field :username, class: "name width"%><br>
+		<%= f.text_field :name, class: "name width"%><br>
 		<label>Image</label><br>
 		
 		<label><%= f.attachment_field :profile_image, class: "use_image" %></label><br>
 		<label>Introduction</label><br>
-		<%= f.text_area :info, class: "introduction width clear_fix" %><br>
+		<%= f.text_area :introduction, class: "introduction width clear_fix" %><br>
 		<%= f.submit "Update User! Yeah!!!", class: "btn btn-primary width"%><br>
 		<%end%>
 	</div>

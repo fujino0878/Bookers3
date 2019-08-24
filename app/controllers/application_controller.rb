@@ -8,9 +8,9 @@ end
   
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:email])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username]) # 新規登録時(sign_up時)にnameというキーのパラメーターを追加で許可する
-     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:name]) # 新規登録時(sign_up時)にnameというキーのパラメーターを追加で許可する
+     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
   
   

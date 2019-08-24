@@ -16,7 +16,7 @@
 					<td>
 						<%= link_to user_path(book.user_id), class: " user_#{book.user_id}" do %>
 							<%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_img.jpg", class: "bookimage img-circle pull-left profile-thumb" %>
-							<%= book.user.username %>
+							<%= book.user.name %>
 						<% end %>
 					</td>
 					<td><%= link_to book.title,book_path(id: book.id), class: "book_#{book.id}" %></td>

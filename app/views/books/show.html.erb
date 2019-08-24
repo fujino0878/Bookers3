@@ -7,7 +7,7 @@
 				<td>
 					<%= link_to user_path(@booka.user_id), class: "user_#{@booka.user_id}" do %>
 					<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_img.jpg", class: "bookimage img-circle pull-left profile-thumb" %>
-					<%= @booka.user.username %>
+					<%= @booka.user.name %>
 					<% end %>
 				</td>
 				<td><%= @booka.title %></td>

@@ -13,6 +13,16 @@ class BooksController < ApplicationController
         end
     
     end
+    def update
+  	@book = Book.find(params[:id])
+  	@book.user_id = current_user.id
+  	if @book.update(book_params)
+  		flash[:notice] = "successfully edited!"
+  		redirect_to books_path
+  	else
+  		render :edit
+  	end
+    end
     def index
         @user = current_user
         @book=Book.new
