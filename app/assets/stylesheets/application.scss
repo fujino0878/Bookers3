@@ -1,0 +1,174 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";  /*ここを追加*/
+ @import "bootstrap";            /*ここを追加*/
+*{
+	margin:0;
+	padding:0;
+}
+div{
+	margin:0;
+	
+}
+label{
+  display:block;
+  width:100%;
+}
+body{
+	width:100%;
+}
+
+.body{
+	text-align:center;
+}
+.container{
+      margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.container2{
+      margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top:90px;
+}
+.width{
+	width:80%;
+}
+.table{
+	width:100%;
+}
+.col-xs-3 {
+    width: 25%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.col-xs-9 {
+    width: 75%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.col-xs-12 {
+    width: 100%;
+}
+
+
+
+#logo{
+	padding:0 10px;
+	margin:0;
+	font-size:20px;
+	text-align:left;
+}
+#header{
+    color:white;
+    font-size: 20px;
+    padding-top: 10px;
+}
+.ul-top{
+	float:right;
+}
+.header {
+li{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #9d9d9d;
+
+}
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.btn-top{
+	text-align:center;
+	margin:0;
+}
+.btn-top a{
+	color:#fff;
+}
+.btn-group-vertical{
+	width:80%;
+	margin: 0 auto;
+	text-align:center;
+}
+small{
+	float:right;
+}
+
+.before{
+	margin-top:10px;
+}
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+navbar>
+.header li{
+	color: #FFF;
+	margin:0;
+	padding:0;
+	text-decoration: none;
+}
+.bookimage{
+	width:40px;
+	margin-right:100%;
+}
+.edit{
+	width:100%;
+	margin:30px;
+}
+.flash{
+	color:limegreen;
+	margin:10px 30px;
+}
+.clear_fix:after {
+	clear:both;
+	 display: block;
+	 content:"";
+}
+@media (min-width: 768px){
+.container {
+    width: 750px;
+}
+.container2 {
+    width: 750px;
+}
+
+}
